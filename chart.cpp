@@ -18,7 +18,7 @@ int main()
   
   const int MAX = 100; 
   int numberSet[MAX];
-  int largest = findLargest(values,size);
+  int largest = findLargest(numberSet[MAX],size);
 
 
   cout<<"Please enter numbers. You can go up to 100. Input 0 to quit "<<endl;
@@ -51,15 +51,17 @@ int largestNumber(int values[], int size)
 {
   int largest = 0; 
 
-  if(
-
+  if()
 
   return largest; 
+}
 
 //prints out the astericks graph bars
-void printBars(int numbers)
+void printBars(int numbers[])
 {
-  for(x = 0; x < numbers.size(); x++)
+  numbers = '*';
+  
+  for(int x = 0; x < numbers[]; x++)
   {
     cout<<numbers<<" ";
   }

@@ -2,80 +2,85 @@
 
 #include<iostream>
 
-
 using namespace std;
-
 
 //prototypes
 
-void printBars();
-int findLargest(int, int);
+int find_largest(int values[], int size);
 
-
+//start program
 
 int main()
 {
-  
+  //constant integer
   const int MAX = 100; 
-  int numberSet[MAX];
-  int largest = findLargest(numberSet[MAX],size);
+
+  //variables
+  int values[MAX]; 
+  int maxHeight;
+  int maxWidth;
+  int index = 0;
+  int temp = -1;
 
 
-  cout<<"Please enter numbers. You can go up to 100. Input 0 to quit "<<endl;
+  //asks for user input 
+  cout<<"Please enter numbers. You can enter up to 100 numbers. Enter 0 to quit "<<endl;
 
- 
-  while(numberSet[MAX] != 0 || numberSet[MAX] == MAX)
+  //takes the users entered numbers and stores them in array until user enters 0 or hits MAX (100)
+  
+  while(temp != 0 && index < MAX)
   {
 
-  cin>>numberSet[MAX];
+    cin>>temp;
+    values[index] = temp;
+    index++; 
 
+  
+
+  maxWidth = temp;
+  maxHeight = find_largest(&temp, index);
+  
+  cout<<maxHeight<<endl;
+
+    for(int x = maxHeight; x > 0; x--)
+    {
+      for(int y = maxWidth; y < maxWidth; y++)
+      {
+        if(values[y] >= maxHeight)
+        {
+          cout<<'*';
+        }
+        else
+        {
+          cout<<" ";
+        }
+      }
+
+      cout<<endl;
+    }
   }
-
-  if(numberSet[MAX] == 0)
-  {
-    printBars.numberSet[MAX];
-
-  }
-
-
-
   return 0;
-
 }
+
 
 //functions
 
 //returns the largest number in the given array of numbers
-
-int largestNumber(int values[], int size)
+int find_largest(int values[], int size)
 {
-  int largest = 0; 
 
-  if()
-
-  return largest; 
-}
-
-//prints out the astericks graph bars
-void printBars(int numbers[])
-{
-  numbers = '*';
-  
-  for(int x = 0; x < numbers[]; x++)
-  {
-    cout<<numbers<<" ";
-  }
-
-}
-
-/*returns the largest value given an array of integers
-int findLargest(int numberSet[MAX], int size)
-{
   int largest = 0;
 
-  return largest;
+  for(int x = 0; x < size; x++)
+  {
+    if(values[x] > largest)
+    {
+      largest = values[x];
+    }
+
+    return largest;
+  }
 
 
 
 }
-*/

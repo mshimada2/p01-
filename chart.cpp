@@ -38,7 +38,7 @@ int main()
 
 
   }
-  maxWidth = index;
+  maxWidth = index - 1;
   maxHeight = find_largest(values, index);
 
   for(int x = maxHeight; x > 0; x--)

@@ -4,30 +4,31 @@
 
 using namespace std;
 
+//global variables
+const int MAX = 100;
+
 //prototypes
 
 int find_largest(int values[], int size);
 
+
 //start program
 
 int main()
-{
-  //constant integer
-  const int MAX = 100; 
-
+{ 
   //variables
   int values[MAX]; 
   int maxHeight;
   int maxWidth;
   int index = 0;
-  int temp = -1;
+  int temp = -1; 
 
 
   //asks for user input 
   cout<<"Please enter numbers. You can enter up to 100 numbers. Enter 0 to quit "<<endl;
 
   //takes the users entered numbers and stores them in array until user enters 0 or hits MAX (100)
-  
+
   while(temp != 0 && index < MAX)
   {
 
@@ -35,30 +36,28 @@ int main()
     values[index] = temp;
     index++; 
 
-  
 
-  maxWidth = temp;
-  maxHeight = find_largest(&temp, index);
-  
-  cout<<maxHeight<<endl;
-
-    for(int x = maxHeight; x > 0; x--)
-    {
-      for(int y = maxWidth; y < maxWidth; y++)
-      {
-        if(values[y] >= maxHeight)
-        {
-          cout<<'*';
-        }
-        else
-        {
-          cout<<" ";
-        }
-      }
-
-      cout<<endl;
-    }
   }
+  maxWidth = index;
+  maxHeight = find_largest(values, index);
+
+  for(int x = maxHeight; x > 0; x--)
+  {
+    for(int y = 0; y < maxWidth; y++)
+    {
+      if(values[y] >= x)
+      {
+        cout<<'*';
+      }
+      else
+      {
+        cout<<" ";
+      }
+    }
+
+    cout<<endl;
+  }
+
   return 0;
 }
 
@@ -78,9 +77,9 @@ int find_largest(int values[], int size)
       largest = values[x];
     }
 
-    return largest;
   }
-
+  
+  return largest;
 
 
 }

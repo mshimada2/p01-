@@ -26,6 +26,7 @@ int main()
   //takes the users entered numbers and stores them in array until user enters 0 or hits MAX (100)
   while(temp != 0 && index < MAX)
   {
+    //takes the number and places it within the array and then increments the array for the next number
     cin>>temp;
     values[index] = temp;
     index++; 

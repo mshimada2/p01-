@@ -23,10 +23,6 @@ int main()
   int index = 0;
   int temp = -1; 
 
-
-  //instructions: asks for user input 
-  cout<<"Please enter numbers. You can enter up to 100 numbers. Enter 0 to quit "<<endl;
-
   //takes the users entered numbers and stores them in array until user enters 0 or hits MAX (100)
   while(temp != 0 && index < MAX)
   {
